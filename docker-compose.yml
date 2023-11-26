@@ -1,0 +1,13 @@
+version: '3'
+services:
+  playground-web-frontend:
+    image: sathvik04/tinder-clone:latest
+    environment:
+      PORT: 3000
+      PROXY_API: http://tinder-server:8000/
+    ports:
+      - 3000:3000
+  playground-web-backend:
+    image: sathvik04/tinder-server:latest
+    ports:
+      - 8000:8000
