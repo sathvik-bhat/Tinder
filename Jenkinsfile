@@ -18,7 +18,7 @@ pipeline {
     stages {
         stage('Git Pull') {
             steps {
-                git url: 'https://github.com/sathvik-bhat/Tinder.git', branch: 'master',
+                git url: 'https://github.com/sathvik-bhat/Tinder.git', branch: 'main',
                 credentialsId: 'Credential_Git'
             }
         }
