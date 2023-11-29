@@ -20,15 +20,13 @@ pipeline {
             steps {
                 // git url: 'https://github.com/sathvik-bhat/Tinder.git', branch: 'main',
                 // credentialsId: 'Credential_Git'
-                checkout scmGit(branches: [[name: '*/main']], 
-                extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'client']], 
-                userRemoteConfigs: [[credentialsId: 'github', url: 'https://github.com/sathvik-bhat/Tinder']])
+                dir('subDir') {
+                    checkout scm
+                }
             }
         }
         stage('Build') {
             steps {
-                sh 'cd client/'
-                
                 sh 'npm install'
                 sh 'tar czf Node.tar.gz client server docker-compose.yml'
             }
