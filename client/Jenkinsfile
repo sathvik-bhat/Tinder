@@ -44,7 +44,9 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script{
-                    dockerimage = sh 'docker build -t '+registry+':latest .'
+                    dir('client') {
+                        dockerimage = sh 'docker build -t '+registry+':latest .'
+                    }
                 }
             }
         }
