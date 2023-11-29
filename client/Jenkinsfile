@@ -27,14 +27,11 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh "pwd"
-                    dir('client') {
-                    sh "pwd"
+                dir('client') {
+                    sh 'npm install'
+                    sh 'tar czf Node.tar.gz client server docker-compose.yml'
                 }
-
                 // sh 'cd client'
-                // sh 'npm install'
-                // sh 'tar czf Node.tar.gz client server docker-compose.yml'
             }
         }
 
