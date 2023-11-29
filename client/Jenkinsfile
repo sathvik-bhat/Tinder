@@ -24,7 +24,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'cd client/'
+                // sh 'cd client/'
                 sh 'npm install'
                 sh 'tar czf Node.tar.gz client server docker-compose.yml'
             }
