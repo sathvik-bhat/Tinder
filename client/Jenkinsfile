@@ -16,19 +16,18 @@ pipeline {
             dockerimage = ''
       }
     stages {
-        stage('Git Pull') {
-            steps {
-                git url: 'https://github.com/sathvik-bhat/Tinder.git', branch: 'main',
-                credentialsId: 'Credential_Git'
-            }
-        }
+        // stage('Git Pull') {
+        //     steps {
+        //         git url: 'https://github.com/sathvik-bhat/Tinder.git', branch: 'main',
+        //         credentialsId: 'Credential_Git'
+        //     }
+        // }
         stage('Build') {
             steps {
                 // sh 'cd client/'
-                dir('./client') {
-                    sh 'npm install'
-                    sh 'tar czf Node.tar.gz client server docker-compose.yml'
-                }
+                
+                sh 'npm install'
+                sh 'tar czf Node.tar.gz client server docker-compose.yml'
             }
         }
 
