@@ -29,7 +29,7 @@ pipeline {
             steps {
                 dir('server') {
                     sh 'npm install'
-                    sh 'tar czf Node.tar.gz client server docker-compose.yml'
+                    // sh 'tar czf Node.tar.gz client server docker-compose.yml'
                 }
                 // sh 'cd client'
             }
