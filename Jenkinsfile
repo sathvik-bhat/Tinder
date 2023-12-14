@@ -60,7 +60,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 // sh 'chmod 600 scientific-calculator.pem'
-                ansiblePlaybook becomeUser: true, colorized: true, disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory',
+                ansiblePlaybook becomeUser: root, colorized: true, disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory',
                 playbook: 'playbook.yml', sudoUser: root
                 // ansiblePlaybook credentialsId: 'localhost_ssh', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory', playbook: 'playbook.yml'
                 // sh 'ansible-playbook -i inventory playbook.yml --private-key key'
