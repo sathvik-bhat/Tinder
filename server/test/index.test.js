@@ -11,7 +11,6 @@ const client = new MongoClient(uri, {
   connectTimeoutMS: 10000,
   serverSelectionTimeoutMS: 10000
 })
-// before(async () => await client.connect());
 
 
 describe('API Tests', () => {

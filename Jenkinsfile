@@ -22,12 +22,12 @@ pipeline {
                 credentialsId: 'Credential_Git'
             }
         }
-        stage('Build') {
-            steps {
-                sh 'npm install'
-                sh 'tar czf Node.tar.gz client server docker-compose.yml'
-            }
-        }
+        // stage('Build') {
+        //     steps {
+        //         sh 'npm install'
+        //         sh 'tar czf Node.tar.gz client server docker-compose.yml'
+        //     }
+        // }
 
         // stage('Test') {
         //     steps {
@@ -57,12 +57,12 @@ pipeline {
         //     }
         // }
 
-        // stage('Deploy') {
-        //     steps {
-        //         sh 'chmod 600 scientific-calculator.pem'
-        //         ansiblePlaybook becomeUser: null, colorized: true, disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory',
-        //         playbook: 'playbook.yml', sudoUser: null, extras: '-e "image_name=sathvik04/scientific-calculator"'
-        //     }
-        // }
+        stage('Deploy') {
+            steps {
+                // sh 'chmod 600 scientific-calculator.pem'
+                ansiblePlaybook becomeUser: null, colorized: true, disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory',
+                playbook: 'playbook.yml', sudoUser: null'
+            }
+        }
     }
 }  
