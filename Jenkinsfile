@@ -63,7 +63,7 @@ pipeline {
                 // ansiblePlaybook becomeUser: null, colorized: true, disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory',
                 // playbook: 'playbook.yml', sudoUser: null
                 // ansiblePlaybook credentialsId: 'localhost_ssh', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory', playbook: 'playbook.yml'
-                sh 'ansible-playbook -i inventory playbook.yml'
+                sh 'ansible-playbook -i inventory playbook.yml --private-key key'
             }
         }
     }
