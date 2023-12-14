@@ -1,0 +1,34 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'run', 'start:backend' ]
+2 info using npm@6.14.8
+3 info using node@v14.9.0
+4 verbose run-script [ 'prestart:backend', 'start:backend', 'poststart:backend' ]
+5 info lifecycle server@1.0.0~prestart:backend: server@1.0.0
+6 info lifecycle server@1.0.0~start:backend: server@1.0.0
+7 verbose lifecycle server@1.0.0~start:backend: unsafe-perm in lifecycle true
+8 verbose lifecycle server@1.0.0~start:backend: PATH: /usr/local/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+9 verbose lifecycle server@1.0.0~start:backend: CWD: /
+10 silly lifecycle server@1.0.0~start:backend: Args: [ '-c', 'nodemon --max-old-space-size=16384 index.js' ]
+11 silly lifecycle server@1.0.0~start:backend: Returned: code: 134  signal: null
+12 info lifecycle server@1.0.0~start:backend: Failed to exec start:backend script
+13 verbose stack Error: server@1.0.0 start:backend: `nodemon --max-old-space-size=16384 index.js`
+13 verbose stack Exit status 134
+13 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-lifecycle/index.js:332:16)
+13 verbose stack     at EventEmitter.emit (events.js:314:20)
+13 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-lifecycle/lib/spawn.js:55:14)
+13 verbose stack     at ChildProcess.emit (events.js:314:20)
+13 verbose stack     at maybeClose (internal/child_process.js:1047:16)
+13 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:287:5)
+14 verbose pkgid server@1.0.0
+15 verbose cwd /
+16 verbose Linux 5.15.0-89-generic
+17 verbose argv "/usr/local/bin/node" "/usr/local/bin/npm" "run" "start:backend"
+18 verbose node v14.9.0
+19 verbose npm  v6.14.8
+20 error code ELIFECYCLE
+21 error errno 134
+22 error server@1.0.0 start:backend: `nodemon --max-old-space-size=16384 index.js`
+22 error Exit status 134
+23 error Failed at the server@1.0.0 start:backend script.
+23 error This is probably not a problem with npm. There is likely additional logging output above.
+24 verbose exit [ 134, true ]
