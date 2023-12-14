@@ -60,8 +60,9 @@ pipeline {
         stage('Deploy') {
             steps {
                 // sh 'chmod 600 scientific-calculator.pem'
-                ansiblePlaybook becomeUser: null, colorized: true, disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory',
-                playbook: 'playbook.yml', sudoUser: null
+                // ansiblePlaybook becomeUser: null, colorized: true, disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory',
+                // playbook: 'playbook.yml', sudoUser: null
+                ansiblePlaybook credentialsId: 'localhost_ssh', installation: 'Ansible', inventory: 'inventory', playbook: 'playbook.yml'
             }
         }
     }
